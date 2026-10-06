@@ -1,0 +1,440 @@
+/* ==========================================================================
+   1. VARIABLES & PALETA DE COLORES (PRO DARK MODE)
+   ========================================================================== */
+:root {
+    /* Paleta Principal Estilo Prowess */
+    --bg-black: #080808;           /* Fondo ultra negro */
+    --bg-surface: #121212;         /* Fondo de tarjetas y secciones */
+    --bg-surface-hover: #1a1a1a;   /* Hover en tarjetas */
+    
+    --color-accent: #ff1e27;       /* Rojo Neón Deportivo */
+    --color-accent-hover: #d9040e; /* Rojo Neón Hover */
+    
+    --text-main: #ffffff;          /* Blanco Puro */
+    --text-muted: #a0a0a0;         /* Gris para descripciones */
+    --border-dark: #222222;        /* Bordes sutiles para elementos oscuros */
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   2. REGLAS BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.accent-text {
+    color: var(--color-accent);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.section-dark {
+    background-color: var(--bg-surface);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   3. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+.navbar {
+    background-color: rgba(8, 8, 8, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 38px;
+    height: 38px;
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   4. SECCIÓN HERO (ESTILO PROWESS)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    padding: 110px 0 90px 0;
+    background: radial-gradient(circle at right, #1a0506 0%, var(--bg-black) 70%);
+    border-bottom: 1px solid var(--border-dark);
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 10px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-description {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+    max-width: 500px;
+    font-weight: 300;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* BOTONES ESTILO ATHLETIC */
+.btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--text-main);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    box-shadow: 0 0 20px rgba(255, 30, 39, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-dark);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.hero-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.hero-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* ==========================================================================
+   5. SECCIÓN 1: CARDS DE PLANES
+   ========================================================================== */
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.grid-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-dark);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 25px rgba(255, 30, 39, 0.15);
+}
+
+.card-media {
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: var(--transition);
+}
+
+.card:hover .card-img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   6. SECCIÓN 2: BENEFICIOS
+   ========================================================================== */
+.grid-features {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.feature-box {
+    background-color: var(--bg-black);
+    border: 1px solid var(--border-dark);
+    padding: 30px;
+    border-radius: 4px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.feature-box:hover {
+    border-color: var(--color-accent);
+}
+
+.feature-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.feature-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   7. SECCIÓN 3: GALERÍA
+   ========================================================================== */
+.grid-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.gallery-item {
+    height: 250px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%) contrast(1.1);
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-img {
+    filter: grayscale(0%) contrast(1);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   8. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.footer {
+    background-color: var(--bg-black);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 2px solid var(--color-accent);
+}
+
+.footer-info {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.footer-subtext {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 868px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .badge {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-list {
+        gap: 15px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+}
